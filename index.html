@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aesthetic Image Processing</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #f2f2f2;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        height: 100vh;
+        width: 150vh;
+      }
+      h1 {
+        color: #333;
+      }
+      canvas {
+        max-width: 200%;
+        max-height: 100%;
+        border: 4px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 10px 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s;
+        margin-bottom: 40px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Keagan's Image Processing Application</h1>
+      <p>
+        Press Capture to take a photo and Uncapture to recapture<br />
+        Press "D" to activate Face Detection function<br />
+        Press "C" to activate Capture function<br />
+        Press "V" to activate Uncapture function<br />
+        Press "S" to activate Save Image function
+      </p>
+      <button id="captureButton">Capture Image</button>
+      <button id="unfreezeButton">Uncapture</button>
+      <button id="saveImageButton">Save Image</button>
+      <p>
+        <strong>User Image Overlay:</strong><br />
+        Click "Upload Image" to select an image file<br />
+        After upload, press keys 1–5 to change overlay placement:<br />
+        &nbsp;&nbsp;1: Middle<br />
+        &nbsp;&nbsp;2: Top<br />
+        &nbsp;&nbsp;3: Bottom<br />
+        &nbsp;&nbsp;4: Left<br />
+        &nbsp;&nbsp;5: Right
+      </p>
+      <button id="uploadImageButton">Upload Image</button>
+      <!-- Container for top sliders -->
+      <div id="topSliderContainer"></div>
+      <!-- Container for bottom sliders -->
+      <div id="bottomSliderContainer"></div>
+    </div>
+
+    <!-- p5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+    <!-- ml5 (loaded from unpkg for better compatibility) -->
+    <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+    <!-- Load object detection scripts -->
+    <script src="libraries/objectdetect.js"></script>
+    <script src="libraries/objectdetect.frontalface.js"></script>
+    <!-- Your main sketch -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
